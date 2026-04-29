@@ -7,7 +7,7 @@
   <meta name="description" content="Taller de chapa y pintura profesional en Villa Pueyrredón, CABA. Más de 20 años de experiencia. Presupuesto sin cargo." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Rubik:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
 
   <script type="application/ld+json">
   {
@@ -140,9 +140,14 @@
     nav .nav-cta {
       background: var(--orange);
       color: var(--white);
-      padding: 8px 18px;
-      border-radius: 6px;
-      font-weight: 600;
+      padding: 9px 20px;
+      border-radius: 0;
+      font-family: 'Rubik', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
     }
 
     nav .nav-cta:hover {
@@ -172,137 +177,92 @@
     /* ─── HERO ─── */
     #hero {
       min-height: 100vh;
-      background: url('taller.png') center center / cover no-repeat;
+      background: #000;
       display: flex;
-      align-items: center;
-      justify-content: center;
+      align-items: flex-start;
+      justify-content: flex-start;
       position: relative;
       overflow: hidden;
-      padding: 100px 24px 80px;
+      padding: 160px 64px 100px;
     }
 
-    .hero-bg-pattern {
+    .hero-bg-img {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.75) 100%);
-      pointer-events: none;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+      z-index: 0;
     }
 
-    .hero-grid-overlay {
+    .hero-overlay {
       position: absolute;
       inset: 0;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-      background-size: 60px 60px;
-      pointer-events: none;
-    }
-
-    .hero-vignette {
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.7) 100%);
-      pointer-events: none;
-    }
-
-    .hero-orb {
-      position: absolute;
-      border-radius: 50%;
-      pointer-events: none;
-      filter: blur(80px);
-    }
-
-    .hero-orb-1 {
-      width: 420px; height: 420px;
-      background: rgba(194,68,10,0.12);
-      top: -80px; left: -100px;
-      animation: orbDrift 12s ease-in-out infinite alternate;
-    }
-
-    .hero-orb-2 {
-      width: 300px; height: 300px;
-      background: rgba(194,68,10,0.07);
-      bottom: 0px; right: -60px;
-      animation: orbDrift 16s ease-in-out infinite alternate-reverse;
-    }
-
-    .hero-orb-3 {
-      width: 200px; height: 200px;
-      background: rgba(255,255,255,0.03);
-      top: 40%; right: 15%;
-      animation: orbDrift 10s ease-in-out infinite alternate;
-    }
-
-    .hero-perspective-line {
-      position: absolute;
-      bottom: 0; left: 50%;
-      transform: translateX(-50%);
-      width: 1px;
-      height: 160px;
-      background: linear-gradient(to top, rgba(194,68,10,0.4), transparent);
-      pointer-events: none;
-    }
-
-    @keyframes orbDrift {
-      from { transform: translate(0, 0) scale(1); }
-      to   { transform: translate(30px, 20px) scale(1.08); }
+      background: linear-gradient(
+        105deg,
+        rgba(0,0,0,0.72) 0%,
+        rgba(0,0,0,0.45) 55%,
+        rgba(0,0,0,0.25) 100%
+      );
+      z-index: 1;
     }
 
     .hero-content {
       position: relative;
-      text-align: center;
-      max-width: 760px;
+      z-index: 2;
+      text-align: left;
+      max-width: 640px;
     }
 
     .hero-eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(232,93,4,0.15);
-      border: 1px solid rgba(232,93,4,0.3);
+      background: rgba(194,68,10,0.18);
+      border: 1px solid rgba(194,68,10,0.35);
       color: var(--orange);
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 2px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
-      padding: 6px 16px;
+      padding: 5px 14px;
       border-radius: 100px;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
 
     .hero-eyebrow::before {
       content: '';
-      width: 6px;
-      height: 6px;
+      width: 5px;
+      height: 5px;
       background: var(--orange);
       border-radius: 50%;
     }
 
     .hero-title {
-      font-size: clamp(44px, 8vw, 88px);
+      font-family: 'Rubik', sans-serif;
+      font-size: clamp(42px, 6.5vw, 64px);
       font-weight: 800;
       color: var(--white);
-      letter-spacing: -2px;
-      line-height: 1.0;
-      margin-bottom: 24px;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      text-transform: uppercase;
+      margin-bottom: 20px;
     }
 
-    .hero-title span { color: var(--orange); }
-
     .hero-subtitle {
-      font-size: clamp(16px, 2.5vw, 20px);
-      color: rgba(255,255,255,0.6);
+      font-size: clamp(15px, 2vw, 18px);
+      color: rgba(255,255,255,0.65);
       font-weight: 400;
-      margin-bottom: 48px;
-      max-width: 520px;
-      margin-left: auto;
-      margin-right: auto;
+      margin-bottom: 40px;
+      max-width: 460px;
+      line-height: 1.6;
     }
 
     .hero-buttons {
       display: flex;
-      gap: 16px;
-      justify-content: center;
+      gap: 14px;
+      justify-content: flex-start;
       flex-wrap: wrap;
     }
 
@@ -310,47 +270,120 @@
       background: var(--orange);
       color: var(--white);
       text-decoration: none;
-      font-size: 15px;
-      font-weight: 600;
-      padding: 16px 36px;
-      border-radius: 8px;
-      border: 2px solid var(--orange);
+      font-family: 'Rubik', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 15px 32px;
+      border: none;
       cursor: pointer;
       transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      box-shadow: 0 4px 20px rgba(232,93,4,0.35);
+      clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+      box-shadow: 0 4px 24px rgba(194,68,10,0.45);
     }
 
     .btn-primary:hover {
       background: var(--orange-hover);
-      border-color: var(--orange-hover);
       transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(232,93,4,0.45);
+      box-shadow: 0 8px 32px rgba(194,68,10,0.55);
     }
 
     .btn-outline {
       background: transparent;
       color: var(--white);
       text-decoration: none;
-      font-size: 15px;
-      font-weight: 600;
-      padding: 16px 36px;
-      border-radius: 8px;
-      border: 2px solid rgba(255,255,255,0.35);
+      font-family: 'Rubik', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 13px 32px;
+      border: 2px solid rgba(255,255,255,0.4);
       cursor: pointer;
       transition: background 0.2s, border-color 0.2s, transform 0.15s;
       display: inline-flex;
       align-items: center;
       gap: 8px;
+      border-radius: 3px;
     }
 
     .btn-outline:hover {
       background: rgba(255,255,255,0.08);
-      border-color: rgba(255,255,255,0.7);
+      border-color: rgba(255,255,255,0.75);
       transform: translateY(-2px);
     }
+
+    /* ─── CONSULTATION CARD ─── */
+    .consultation-card {
+      position: absolute;
+      bottom: 48px;
+      left: 64px;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 22px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.03) 100%);
+      backdrop-filter: blur(40px) saturate(180%);
+      -webkit-backdrop-filter: blur(40px) saturate(180%);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: inset 0 1px 1px rgba(255,255,255,0.10), 0 8px 40px rgba(0,0,0,0.35);
+      border-radius: 14px;
+      max-width: 340px;
+    }
+
+    .consultation-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--orange), #ff6b35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .consultation-avatar svg { width: 20px; height: 20px; }
+
+    .consultation-text { flex: 1; }
+
+    .consultation-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 2px;
+    }
+
+    .consultation-desc {
+      font-size: 11px;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 10px;
+    }
+
+    .btn-book-call {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--white);
+      color: #111;
+      font-family: 'Rubik', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 8px 16px;
+      border: none;
+      cursor: pointer;
+      clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+      transition: opacity 0.2s, transform 0.15s;
+    }
+
+    .btn-book-call:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btn-book-call svg { width: 13px; height: 13px; }
 
     .hero-scroll-hint {
       position: absolute;
@@ -365,6 +398,7 @@
       font-size: 11px;
       letter-spacing: 2px;
       text-transform: uppercase;
+      z-index: 2;
     }
 
     .scroll-line {
@@ -417,8 +451,34 @@
 
     .section-desc.light { color: rgba(255,255,255,0.55); }
 
+    /* ─── VIDEO BG SECTIONS ─── */
+    .has-video-bg {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .has-video-bg .section-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .has-video-bg .section-video-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    .has-video-bg .container {
+      position: relative;
+      z-index: 2;
+    }
+
     /* ─── SERVICIOS ─── */
-    #servicios { background: var(--white); }
+    #servicios { background: var(--dark); }
 
     .services-grid {
       display: grid;
@@ -427,8 +487,8 @@
     }
 
     .service-card {
-      background: var(--light);
-      border: 1px solid var(--gray-border);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
       border-radius: var(--radius);
       padding: 36px 28px;
       transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
@@ -449,8 +509,8 @@
 
     .service-card:hover {
       transform: translateY(-6px);
-      box-shadow: var(--shadow-hover);
-      border-color: transparent;
+      box-shadow: 0 8px 36px rgba(0,0,0,0.3);
+      border-color: rgba(255,255,255,0.14);
     }
 
     .service-card:hover::before { transform: scaleX(1); }
@@ -458,7 +518,7 @@
     .service-icon {
       width: 52px;
       height: 52px;
-      background: rgba(232,93,4,0.1);
+      background: rgba(194,68,10,0.15);
       border-radius: 12px;
       display: flex;
       align-items: center;
@@ -471,13 +531,13 @@
     .service-card h3 {
       font-size: 18px;
       font-weight: 700;
-      color: var(--dark);
+      color: var(--white);
       margin-bottom: 10px;
     }
 
     .service-card p {
       font-size: 14px;
-      color: var(--text-muted);
+      color: rgba(255,255,255,0.5);
       line-height: 1.65;
     }
 
@@ -677,7 +737,7 @@
       display: block;
       font-size: 13px;
       font-weight: 600;
-      color: var(--text-muted);
+      color: rgba(255,255,255,0.5);
       text-transform: uppercase;
       letter-spacing: 0.5px;
       margin-bottom: 3px;
@@ -685,7 +745,7 @@
 
     .contact-detail-text span {
       font-size: 15px;
-      color: var(--dark);
+      color: var(--white);
     }
 
     .map-container {
@@ -710,7 +770,7 @@
     .form-group label {
       font-size: 13px;
       font-weight: 600;
-      color: var(--text);
+      color: rgba(255,255,255,0.75);
       letter-spacing: 0.3px;
     }
 
@@ -718,14 +778,19 @@
     .form-group textarea {
       width: 100%;
       padding: 13px 16px;
-      border: 1.5px solid var(--gray-border);
+      border: 1.5px solid rgba(255,255,255,0.15);
       border-radius: 8px;
       font-family: 'Inter', sans-serif;
       font-size: 15px;
-      color: var(--dark);
-      background: var(--white);
+      color: var(--white);
+      background: rgba(255,255,255,0.07);
       transition: border-color 0.2s, box-shadow 0.2s;
       outline: none;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: rgba(255,255,255,0.3);
     }
 
     .form-group input:focus,
@@ -981,8 +1046,10 @@
       .form-row { grid-template-columns: 1fr; }
       .footer-top { grid-template-columns: 1fr; gap: 32px; }
       .footer-bottom { flex-direction: column; text-align: center; }
-      .hero-buttons { flex-direction: column; align-items: center; }
-      .btn-primary, .btn-outline { width: 100%; max-width: 320px; justify-content: center; }
+      #hero { padding: 130px 32px 200px; }
+      .hero-buttons { flex-direction: column; align-items: flex-start; }
+      .btn-primary, .btn-outline { width: 100%; max-width: 280px; justify-content: center; }
+      .consultation-card { left: 32px; right: 32px; max-width: none; bottom: 28px; }
     }
   </style>
 </head>
@@ -1013,28 +1080,39 @@
 
   <!-- ─── HERO ─── -->
   <section id="hero">
-    <div class="hero-bg-pattern"></div>
-    <div class="hero-grid-overlay"></div>
-    <div class="hero-vignette"></div>
-    <div class="hero-orb hero-orb-1"></div>
-    <div class="hero-orb hero-orb-2"></div>
-    <div class="hero-orb hero-orb-3"></div>
-    <div class="hero-perspective-line"></div>
+    <video autoplay muted loop playsinline class="hero-bg-img" style="object-fit:cover;">
+      <source src="mixkit-accelerating-car-dashboard-64-full-hd.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+
     <div class="hero-content fade-in visible">
       <div class="hero-eyebrow">Villa Pueyrredón, CABA</div>
-      <h1 class="hero-title">Magoonher</h1>
-      <p class="hero-subtitle">Chapa &amp; Pintura profesional en Villa Pueyrredón. Calidad de fábrica, experiencia y confianza.</p>
+      <h1 class="hero-title">Chapa &amp; Pintura<br>Profesional</h1>
+      <p class="hero-subtitle">Calidad de fábrica, experiencia y confianza. Más de 20 años trabajando en el barrio.</p>
       <div class="hero-buttons">
         <a href="#contacto" class="btn-primary">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
           Pedí tu presupuesto
         </a>
         <a href="#servicios" class="btn-outline">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
           Ver servicios
         </a>
       </div>
     </div>
+
+    <div class="consultation-card">
+      <div class="consultation-avatar">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.57 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.27a16 16 0 0 0 6.18 6.18l1.83-1.83a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </div>
+      <div class="consultation-text">
+        <p class="consultation-title">Presupuesto sin cargo</p>
+        <p class="consultation-desc">Consultá nuestros servicios sin compromiso</p>
+        <button class="btn-book-call" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.57 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.27a16 16 0 0 0 6.18 6.18l1.83-1.83a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Contactar ahora
+        </button>
+      </div>
+    </div>
+
     <div class="hero-scroll-hint">
       <div class="scroll-line"></div>
       <span>Scroll</span>
@@ -1046,8 +1124,8 @@
     <div class="container">
       <div class="section-header fade-in">
         <span class="section-label">Lo que hacemos</span>
-        <h2 class="section-title">Nuestros servicios</h2>
-        <p class="section-desc">Trabajamos con los más altos estándares de calidad para devolver tu vehículo a su estado original.</p>
+        <h2 class="section-title light">Nuestros servicios</h2>
+        <p class="section-desc light">Trabajamos con los más altos estándares de calidad para devolver tu vehículo a su estado original.</p>
       </div>
       <div class="services-grid">
         <div class="service-card fade-in fade-in-delay-1">
@@ -1083,12 +1161,16 @@
   </section>
 
   <!-- ─── GALERÍA ─── -->
-  <section id="galeria" style="background:var(--light); padding:96px 24px;">
+  <section id="galeria" class="has-video-bg" style="background:#111; padding:96px 24px;">
+    <video autoplay muted loop playsinline class="section-video">
+      <source src="mixkit-two-avenues-with-many-cars-traveling-at-night-34562-full-hd.mp4" type="video/mp4">
+    </video>
+    <div class="section-video-overlay" style="background:rgba(0,0,0,0.62);"></div>
     <div class="container">
       <div class="section-header fade-in">
         <span class="section-label">Portfolio</span>
-        <h2 class="section-title">Nuestros trabajos</h2>
-        <p class="section-desc">Cada vehículo que sale del taller refleja nuestro compromiso con la calidad.</p>
+        <h2 class="section-title light">Nuestros trabajos</h2>
+        <p class="section-desc light">Cada vehículo que sale del taller refleja nuestro compromiso con la calidad.</p>
       </div>
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px;">
         <div class="gallery-item fade-in fade-in-delay-1">
@@ -1149,12 +1231,16 @@
   </section>
 
   <!-- ─── TESTIMONIOS ─── -->
-  <section id="testimonios">
+  <section id="testimonios" class="has-video-bg" style="background:#111;">
+    <video autoplay muted loop playsinline class="section-video">
+      <source src="mixkit-aerial-view-of-city-traffic-at-night-11-full-hd.mp4" type="video/mp4">
+    </video>
+    <div class="section-video-overlay" style="background:rgba(0,0,0,0.70);"></div>
     <div class="container">
       <div class="section-header fade-in">
         <span class="section-label">Clientes</span>
-        <h2 class="section-title">Lo que dicen de nosotros</h2>
-        <p class="section-desc">La satisfacción de nuestros clientes es nuestra mejor tarjeta de presentación.</p>
+        <h2 class="section-title light">Lo que dicen de nosotros</h2>
+        <p class="section-desc light">La satisfacción de nuestros clientes es nuestra mejor tarjeta de presentación.</p>
       </div>
       <div class="testimonials-grid">
         <div class="testimonial-card fade-in fade-in-delay-1">
@@ -1216,17 +1302,21 @@
   </section>
 
   <!-- ─── CONTACTO ─── -->
-  <section id="contacto">
+  <section id="contacto" class="has-video-bg" style="background:#111;">
+    <video autoplay muted loop playsinline class="section-video">
+      <source src="mixkit-dashboard-of-a-car-72-full-hd.mp4" type="video/mp4">
+    </video>
+    <div class="section-video-overlay" style="background:rgba(0,0,0,0.78);"></div>
     <div class="container">
       <div class="section-header fade-in">
         <span class="section-label">Contacto</span>
-        <h2 class="section-title">Solicitá asesoramiento</h2>
-        <p class="section-desc">Completá el formulario y te respondemos a la brevedad. Sin compromiso, sin cargos adicionales.</p>
+        <h2 class="section-title light">Solicitá asesoramiento</h2>
+        <p class="section-desc light">Completá el formulario y te respondemos a la brevedad. Sin compromiso, sin cargos adicionales.</p>
       </div>
       <div class="contact-layout">
         <div class="fade-in">
           <div class="contact-info">
-            <h3>Información del taller</h3>
+            <h3 style="color:var(--white);">Información del taller</h3>
             <div class="contact-detail">
               <div class="contact-detail-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c2440a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
